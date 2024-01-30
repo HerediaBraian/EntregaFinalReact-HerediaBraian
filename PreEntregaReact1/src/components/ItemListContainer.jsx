@@ -1,15 +1,30 @@
+import { useState } from "react";
+import arrayProductos from ".productos.json";
+import { useEffect } from "react";
+import ItemList from "./ItemList";
 
+const ItemListContainer = () => {
+    const [items, setItems] = useState([]);
+    const {id} = useParams();
 
-const ItemListContainer = ({ mensaje }) => {
+    useEffect(() => {
+        const promesa = new Promise(resolve => {
+            setTimeout(() => {
+                resolve(id ? arrayProductos.filter(item => item.categoria === id) : arrayProductos);
+            }, 2000);
+        })
+        promesa.then(data => {
+            setItems(data);
+            console.log(data);
+        })
+    }, [id]);
+
     return (
-        <div className="conteiner my-5 col-md-12 text-center" >
-            <div className="row ">
-                <div className="col text-center">
-                    <div className="alert alert-info p-3" role="alert"> {mensaje}</div>
-                </div>
-            </div>
-        </div>
+        <>
+            <ItemList items={items} />
+        </>
     )
 }
+
 export default ItemListContainer;
 

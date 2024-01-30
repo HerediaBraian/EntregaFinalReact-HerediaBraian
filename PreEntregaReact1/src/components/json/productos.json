@@ -1,0 +1,178 @@
+[
+    {
+        "id": "urbana-01",
+        "title": "urbana 01",
+        "image": "./IMG/urbana1.jpg",
+        "description":"Remeras comodas y con estilo, ideal para utilizar en el gimnasio.",
+        "categoria": {
+            "nombre": "urbanas",
+            "id": "urbanas"
+        },
+        "price": 7000
+    },
+    {
+        "id": "urbana-02",
+        "title": "urbana 02",
+        "image": "./IMG/urbana2.jpg",
+        "description":"Remeras comodas y con estilo, ideal para utilizar en el gimnasio.",
+        "categoria": {
+            "nombre": "urbanas",
+            "id": "urbanas"
+        },
+        "price": 7000
+    },
+    {
+        "id": "urbana-03",
+        "title": "urbana 03",
+        "image": "./IMG/urbana3.jpg",
+        "description":"Remeras comodas y con estilo, ideal para utilizar en el gimnasio.",
+        "categoria": {
+            "nombre": "urbanas",
+            "id": "urbanas"
+        },
+        "price": 7000
+    },
+    {
+        "id": "urbana-04",
+        "title": "urbana 04",
+        "image": "./IMG/urbana4.jpg",
+        "description":"Remeras comodas y con estilo, ideal para utilizar en el gimnasio.",
+        "categoria": {
+            "nombre": "urbanas",
+            "id": "urbanas"
+        },
+        "price": 7000
+    },
+    {
+        "id": "urbana-05",
+        "title": "urbana 05",
+        "image": "./IMG/urbana5.jpg",
+        "description":"Remeras comodas y con estilo, ideal para utilizar en el gimnasio.",
+        "categoria": {
+            "nombre": "urbanas",
+            "id": "urbanas"
+        },
+        "price": 7000
+    },
+    {
+        "id": "oversize-01",
+        "title": "oversize 01",
+        "image": "./IMG/oversize1.jpg",
+        "description":"Remeras comodas y con estilo, ideal para utilizar en el gimnasio.",
+        "categoria": {
+            "nombre": "oversizes",
+            "id": "oversizes"
+        },
+        "price": 8500
+    },
+    {
+        "id": "oversize-02",
+        "title": "oversize 02",
+        "image": "./IMG/oversize2.jpg",
+        "description":"Remeras comodas y con estilo, ideal para utilizar en el gimnasio.",
+        "categoria": {
+            "nombre": "oversizes",
+            "id": "oversizes"
+        },
+        "price": 8500
+    },
+    {
+        "id": "oversize-03",
+        "title": "oversize 03",
+        "image": "./IMG/oversize3.jpg",
+        "description":"Remeras comodas y con estilo, ideal para utilizar en el gimnasio.",
+        "categoria": {
+            "nombre": "oversizes",
+            "id": "oversizes"
+        },
+        "price": 8500
+    },
+    {
+        "id": "oversize-04",
+        "title": "oversize 04",
+        "image": "./IMG/oversize4.jpg",
+        "description":"Remeras comodas y con estilo, ideal para utilizar en el gimnasio.",
+        "categoria": {
+            "nombre": "oversizes",
+            "id": "oversizes"
+        },
+        "price": 8500
+    },
+    {
+        "id": "oversize-05",
+        "title": "oversize 05",
+        "image": "./IMG/oversize5.jpg",
+        "description":"Remeras comodas y con estilo, ideal para utilizar en el gimnasio.",
+        "categoria": {
+            "nombre": "oversizes",
+            "id": "oversizes"
+        },
+        "price": 8500
+    },
+    {
+        "id": "oversize-06",
+        "title": "oversize 06",
+        "image": "./IMG/oversize6.jpg",
+        "description":"Remeras comodas y con estilo, ideal para utilizar en el gimnasio.",
+        "categoria": {
+            "nombre": "oversizes",
+            "id": "oversizes"
+        },
+        "price": 8500
+    },
+    {
+        "id": "musculosas-01",
+        "title": "musculosas 01",
+        "image": "./IMG/musculosa1.jpg",
+        "description":"Remeras comodas y con estilo, ideal para utilizar en el gimnasio.",
+        "categoria": {
+            "nombre": "musculosas",
+            "id": "musculosas"
+        },
+        "price": 6000
+    },
+    {
+        "id": "musculosas-02",
+        "title": "musculosas 02",
+        "image": "./IMG/musculosa2.jpg",
+        "description":"Remeras comodas y con estilo, ideal para utilizar en el gimnasio.",
+        "categoria": {
+            "nombre": "musculosas",
+            "id": "musculosas"
+        },
+        "price": 6000
+    },
+    {
+        "id": "musculosas-03",
+        "title": "musculosas 03",
+        "image": "./IMG/musculosa3.jpg",
+        "description":"Remeras comodas y con estilo, ideal para utilizar en el gimnasio.",
+        "categoria": {
+            "nombre": "musculosas",
+            "id": "musculosas"
+        },
+        "price": 6000
+    },
+    {
+        "id": "musculosas-04",
+        "title": "musculosas 04",
+        "image": "./IMG/musculosa4.jpg",
+        "description":"Remeras comodas y con estilo, ideal para utilizar en el gimnasio.",
+        "categoria": {
+            "nombre": "musculosas",
+            "id": "musculosas"
+        },
+        "price": 6000
+    },
+    {
+        "id": "musculosas-05",
+        "title": "musculosas 05",
+        "image": "./IMG/musculosa5.jpg",
+        "description":"Remeras comodas y con estilo, ideal para utilizar en el gimnasio.",
+        "categoria": {
+            "nombre": "musculosas",
+            "id": "musculosas"
+        },
+        "price": 6000
+    }
+]
