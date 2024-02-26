@@ -1,43 +1,24 @@
-import {NavLink} from "react-router-dom";
-import CartWidget from "./CartWidget";
-import Logo from "./Logo";
-
+import {Link} from "react-router-dom";
+import logo from '../assets/logo entrega.jpeg';
 
 const NavBar = () => {
     return (
-        <nav className="navbar navbar-expand-lg bg-ligth-tertiary shadow p-4 col-md-12">
-            <div className="container-fluid">
-                <div>
-                    <Logo/>
-                </div>
-                <NavLink className="navbar-brand" to={"/"} >Miura</NavLink>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav">
-                        <li className="nav-item">
-                            <NavLink className="nav-link active" aria-current="page" to={"/"}>Inicio</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to={"/category/productos"}>Productos</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to={"/category/urbanas"}>Remeras Urbanas</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to={"/category/oversizes"}>Remeras Oversize</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to={"/category/musculosas"}>Musculosas</NavLink>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <CartWidget/>
-                </div>
-            </div>
-        </nav>
+        <header>
+            <img src={logo} className="logo" alt="" />
+        <nav id='nav'>
+          <h1 id='brand'></h1>
+          <ul id='nav-list'>
+          <Link to='/home'> <li className='list-item'>Home</li></Link>
+          <Link to='/create'><li className='list-item'>Crear Producto</li></Link>
+              <ul className='show'>
+            {/* <Link to='/category/Urbanas'><li>Urbanas</li></Link>
+            <Link to='/category/Oversize'><li>Oversize</li></Link>
+            <Link to='/category/Musculosas'><li>Musculosas</li></Link> */}
+              </ul>
+          </ul>
+       
+      </nav>
+      </header>
     )
 }
 

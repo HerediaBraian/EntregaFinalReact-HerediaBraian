@@ -1,21 +1,21 @@
-import Header from "./components/Header";
+import CartWidget from "./components/CartWidget";
 import ItemListContainer from "./components/ItemListContainer";
-import NavBar from "./components/NavBar";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import Navbar from "./components/NavBar";
+import Cart from "./components/cart/Cart";
+import CreateOrder from "./pages/orders/CreateOrder";
+import './App.css';
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Header/>
-      <NavBar />
-      <ItemListContainer/>
-      <Routes>
-        <Route path= {"/"} element={<ItemListContainer />} />
-        <Route path= {"/category/:id"} element={<ItemListContainer />} />
-        <Route path= {"/item/:id"} element={<ItemListContainer />} />
-      </Routes>
-    </BrowserRouter>
-
+    <>
+    <Router>
+      <Navbar/>
+      <Switch>
+        <Route path="/home" exact={true} component={ItemListContainer}/>
+      </Switch>
+      </Router>
+    </>
   )
 }
 
