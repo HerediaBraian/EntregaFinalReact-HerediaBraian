@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import CartWidget from "./CartWidget";
+import ItemList from './ItemList'
 // import ItemList from "./ItemList";
 
 const ItemListContainer = () => {
@@ -13,7 +13,7 @@ const ItemListContainer = () => {
         <>
         <h1>Lista de productos</h1>
         <div className="item-conteiner">
-        <CartWidget/>
+        <ItemList/>
         </div>
         </>
     )

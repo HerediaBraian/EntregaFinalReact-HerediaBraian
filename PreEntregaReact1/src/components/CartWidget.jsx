@@ -1,72 +1,52 @@
-import IconCart from "../assets/cart.svg";
-import { useEffect, useState } from "react";
-import {getFirestore, collection, getDocs} from "firebase/firestore";
-import { Link } from "react-router-dom";
-import Cart from "./cart/Cart";
-import CreateOrder from "../pages/orders/CreateOrder";
-import {Cloudinary} from "@cloudinary/url-gen";
+import React, {useState} from 'react';
+import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
+import CreateOrder from '../../pages/orders/CreateOrder';
 
-// import { FaShoppingCart } from "react-icons/fa";
-
-const CartWidget = () => {
-  const cld = new Cloudinary({cloud: {cloudName: 'da1xik5zn'}});
-
+export default function Cart(props){
+    let { cart } = props;
     const [cartVisible, setCartVisible] = useState(false);
-    const [products, setProducts] = useState(null); 
-    const [cart,setCart] = useState([])
-
-    useEffect(() => {
-      const db = getFirestore();
-      const colRef = collection(db, 'Productos');  
-
-    getDocs(colRef).then((snapshot) => {
-        const data= snapshot.docs.map(doc => ({id: doc.id, ...doc.data()}));    
-        setProducts(data);
-    })
-    }, [])
-
-    if(!products) return <h1>Cargando...</h1>
-
-    const addToCart = (product) => {
-        setCart(prevCart=> [...prevCart, product]);
+    const confirm = () => {
+        
+    }
+    const cancel = () => {
+        cart = [];
         console.log(cart);
+        window.location.reload()
     }
-
-    if (cart.length === 5) {
-        alert('No se pueden agregar mas productos al carrito.');
-    }
-    console.log(products);
-  const toggleCartVisibility = () => {
-     (cart.length > 0) ? setCartVisible(!cartVisible)
-    : alert('No hay productos en el carrito');
-  };
-    return (
+    console.log({"cartitooooooo":cart});
+    const toggleCartVisibility = () => {
+        setCartVisible(!cartVisible);
+      };
+      
+    return(
         <>
-       {cartVisible && <Cart cart={cart}/>}
-
-          {
-            products?.map(product => {
-                return (
-                    <article className='product-card'  key={product.id}>
-                      <div className="header-card">
-                    <p className='title'>{product.title}</p>
-                   
-                    <button onClick={toggleCartVisibility}> <img src={IconCart} alt="" /></button>
-                      </div>
-                    <img className='img' src={product.img}></img>
-                    <p className='price'>${product.price}</p>
-                    <Link to={`/products/${product.id}/detail`}><p className='detail-btn'>Detalle</p></Link>
-                    {
-                       cart.length < 5 ?  <button className="add" onClick={() => addToCart(product)}>Agregar</button>
-                       :
-                       <button disabled>Agregar</button> 
-                    }
-                    {/* <button onClick={sendOrder}>Comprar</button> */}
+        {cartVisible && <CreateOrder cart={cart}/>}
+    {!cartVisible &&
+        <>
+        <h1>Estas viendo tu carrito</h1>
+        <div className='cart-modal'>
+        { 
+            cart.map((product)=>{
+                return(
+                    <article className='product-to-buy' key={product.id}>
+                        <h2>{product.title}</h2>
+                        <p>{product.description}</p>
+                        <p>${product.price}</p>
                     </article>
-            )})
+                )
+            })
+        }
+        <button onClick={cancel}>Cancelar</button>
+        <button onClick={toggleCartVisibility}>Confirmar</button>
+        </div>
+        </>
         }
         </>
+
     )
 }
 
-export default CartWidget;
+Cart.propTypes = {
+    cart: PropTypes.array.isRequired, 
+  };
