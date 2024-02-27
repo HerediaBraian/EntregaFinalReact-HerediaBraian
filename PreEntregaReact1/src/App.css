@@ -130,8 +130,8 @@ background-color: red;
 }
 
 .confirm-form{
-    width: 600px;
-    height: 650px;
+    width: 700px;
+    height: 750px;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -184,5 +184,14 @@ background-color: red;
         width: 20%;
         text-align: center;
         border-radius: 10px;
+    }
+}
+.order-products{
+    display: flex;;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    .order-products-item{
+        margin: 5px;
     }
 }
