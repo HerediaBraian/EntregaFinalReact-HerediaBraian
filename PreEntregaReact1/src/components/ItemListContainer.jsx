@@ -12,7 +12,9 @@ const ItemListContainer = () => {
     return (
         <>
         <h1>Lista de productos</h1>
+        <div className="item-conteiner">
         <CartWidget/>
+        </div>
         </>
     )
 }

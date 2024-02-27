@@ -8,13 +8,10 @@ const NavBar = () => {
         <nav id='nav'>
           <h1 id='brand'></h1>
           <ul id='nav-list'>
-          <Link to='/home'> <li className='list-item'>Home</li></Link>
-          <Link to='/create'><li className='list-item'>Crear Producto</li></Link>
-              <ul className='show'>
-            {/* <Link to='/category/Urbanas'><li>Urbanas</li></Link>
-            <Link to='/category/Oversize'><li>Oversize</li></Link>
-            <Link to='/category/Musculosas'><li>Musculosas</li></Link> */}
-              </ul>
+          <Link to='/'> <li className='list-item'>Home</li></Link>
+            <Link to='/category/urban'><li>Urbanas</li></Link>
+            <Link to='/category/oversize'><li>Oversize</li></Link>
+            <Link to='/category/musculosa'><li>Musculosas</li></Link> 
           </ul>
        
       </nav>

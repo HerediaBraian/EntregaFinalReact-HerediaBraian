@@ -31,6 +31,65 @@ header{
     right: 0;
     cursor: pointer;
 }
+.item-conteiner{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.product-card{
+    width: 300px;
+    margin: 10px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    background-color: #232323;
+    border-radius: 10px;
+    padding: 10px;
+    color: #fff;
+    .img{
+        width: 100px;
+        height: 120px;
+    }
+    .detail-btn{
+        color: #fff;
+        background-color: rgb(70, 70, 250);
+        padding: 5px 10px;
+        border: 1px solid #fff;
+        text-align: center;
+        border-radius: 8px;
+    }
+    .header-card{
+        display: flex; 
+        justify-content: space-between;
+        button{
+            height: 30px;
+            width: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 5px;
+            border: none;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+        .title{
+            font-size: 23px;
+            font-weight: bold;
+            ;
+        }
+    
+    }
+    .add{
+        padding: 5px 10px;
+        background-color: greenyellow;
+        color: #232323;
+        border: none;
+        border-radius: 10px;
+    }
+}
 .hidden{
     display: none;
 }
@@ -100,5 +159,30 @@ background-color: red;
         width: 400px;
         cursor: pointer;
         margin: 3px auto;
+    }
+}
+.product-detail{
+    width: 400px;
+    margin: 10px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    background-color: #232323;
+    border-radius: 10px;
+    padding: 10px;
+    color: #fff;
+    .img{
+        height: 200px;
+        width: 200px;
+    }
+    .back-home{
+        color: #fff;
+        background-color: rgb(70, 70, 250);
+        padding: 10px 20px;
+        width: 20%;
+        text-align: center;
+        border-radius: 10px;
     }
 }

@@ -27,16 +27,8 @@ const ItemDetailConteiner = () => {
             
     return(
         <>
-        <h2>Todos los productos</h2>
-        {
-            products.map((product) => {
-                return (
-                    <>
-                    <h1>{product.title}</h1>
-                    </>
-                )
-            })
-        }
+        <h2>Detalle del producto</h2>
+        <ItemDetail/>
         </>
     )
     }
