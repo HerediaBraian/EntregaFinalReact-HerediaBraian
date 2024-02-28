@@ -23,7 +23,6 @@ const ItemDetailConteiner = () => {
     // const addToCart = (product)=>{
     //     cart.push(product);
     // }
-   
             
     return(
         <>

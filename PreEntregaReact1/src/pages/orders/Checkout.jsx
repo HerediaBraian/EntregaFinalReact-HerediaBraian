@@ -2,7 +2,7 @@ import {useState} from 'react';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import PropTypes from 'prop-types';
 
-export default function CreateOrder({cart}){
+export default function Checkout({cart}){
     const [name, setName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
@@ -47,9 +47,6 @@ export default function CreateOrder({cart}){
         console.log('Orden creada con exito');
         setShowOrder(true)
         console.log(showOrder);
-        setTimeout(() => {
-            window.location.reload();
-        }, 10000);
     } 
     
    const cancelOrder = () => {
@@ -77,8 +74,13 @@ export default function CreateOrder({cart}){
             </>)
  :          (
             <>
-            <h1>Orden creada con exito</h1>
-            <div>
+           <strong>
+            <h1>Detalle de la compra</h1>
+            </strong> 
+           <strong>
+            <p>Gracias por tu compra</p>
+            </strong> 
+            <br />
             <p>Datos Comprador: {order.buyer.name}</p>
             <p>Nombre Completo: {order.buyer.lastName}</p>
             <p>Email: {order.buyer.email}</p>
@@ -90,22 +92,25 @@ export default function CreateOrder({cart}){
                     <div className='order-products-item' key={product.id}>
                     <p>Producto: {product.title}</p>
                     <p>Precio: {product.price}</p>
-                    <p>Categoria: {product.category}</p>
                     </div>
                 )
             })}
             </div>
+            <strong>
             <p>Precio Final: {order.cart.total}</p>
+            </strong>
 
-            </div>
-            </>
+                    </>
     )        }
+
+    <button onClick={cancelOrder}>Volver</button>
+
         </form>
         </>
     )
 }
 
 
-CreateOrder.propTypes = {
+Checkout.propTypes = {
     cart: PropTypes.array.isRequired, 
   };

@@ -13,7 +13,6 @@ const NavBar = () => {
             <Link to='/category/oversize'><li>Oversize</li></Link>
             <Link to='/category/musculosa'><li>Musculosas</li></Link> 
           </ul>
-       
       </nav>
       </header>
     )

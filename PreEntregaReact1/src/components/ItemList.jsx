@@ -2,14 +2,15 @@ import IconCart from "../assets/cart.svg";
 import { useEffect, useState } from "react";
 import {getFirestore, collection, getDocs} from "firebase/firestore";
 import { Link } from "react-router-dom";
-import CartWidget from "./cart/Cart";
-import CreateOrder from "../pages/orders/CreateOrder";
+import CartWidget from"./CartWidget";
 import {Cloudinary} from "@cloudinary/url-gen";
-
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 // import { FaShoppingCart } from "react-icons/fa";
 
-const CartWidget = () => {
+const ItemList = () => {
   const cld = new Cloudinary({cloud: {cloudName: 'da1xik5zn'}});
+  const MySwal = withReactContent(Swal)
 
     const [cartVisible, setCartVisible] = useState(false);
     const [products, setProducts] = useState(null); 
@@ -32,18 +33,25 @@ const CartWidget = () => {
         console.log(cart);
     }
 
-    if (cart.length === 5) {
-        alert('No se pueden agregar mas productos al carrito.');
+    if (cart.length === 6) {
+      Swal.fire({
+        title: "Capacidad maxima!",
+        text: "Tu carrito esta lleno, no puedes agregar mas productos!",
+        icon: "error"
+      });
     }
     console.log(products);
   const toggleCartVisibility = () => {
      (cart.length > 0) ? setCartVisible(!cartVisible)
-    : alert('No hay productos en el carrito');
+    : Swal.fire({
+      title: "Carrito vacio!",
+      text: "Tu carrito se encuentra vacio",
+      icon: "error"
+    });
   };
     return (
         <>
-       {cartVisible && <Cart cart={cart}/>}
-
+       {cartVisible && <CartWidget cart={cart}/>}
           {
             products?.map(product => {
                 return (
@@ -57,7 +65,7 @@ const CartWidget = () => {
                     <p className='price'>${product.price}</p>
                     <Link to={`/products/${product.id}/detail`}><p className='detail-btn'>Detalle</p></Link>
                     {
-                       cart.length < 5 ?  <button className="add" onClick={() => addToCart(product)}>Agregar</button>
+                       cart.length < 6 ?  <button className="add" onClick={() => addToCart(product)}>Agregar</button>
                        :
                        <button disabled>Agregar</button> 
                     }
@@ -69,4 +77,4 @@ const CartWidget = () => {
     )
 }
 
-export default CartWidget;
+export default ItemList;
