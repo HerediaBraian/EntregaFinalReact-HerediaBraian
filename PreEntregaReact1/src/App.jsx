@@ -1,21 +1,27 @@
-import Header from "./components/Header";
 import ItemListContainer from "./components/ItemListContainer";
-import NavBar from "./components/NavBar";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Navbar from "./components/NavBar";
+import './App.css';
+import {Cloudinary} from "@cloudinary/url-gen";
+import ItemDetailConteiner from "./components/ItemDetailConteiner";
+import Categorys from "./pages/categorys/Categorys";
 
 const App = () => {
+  const cld = new Cloudinary({cloud: {cloudName: 'da1xik5zn'}});
+  
+  
+  
   return (
-    <BrowserRouter>
-      <Header/>
-      <NavBar />
-      <ItemListContainer/>
-      <Routes>
-        <Route path= {"/"} element={<ItemListContainer />} />
-        <Route path= {"/category/:id"} element={<ItemListContainer />} />
-        <Route path= {"/item/:id"} element={<ItemListContainer />} />
-      </Routes>
-    </BrowserRouter>
-
+    <>
+    <Router>
+      <Navbar/>
+      <Switch>
+        <Route path="/" exact={true} component={ItemListContainer}/>
+        <Route path="/products/:id/detail" exact={true} component={ItemDetailConteiner}/>
+        <Route path="/category/:category" exact={true} component={Categorys}/>
+      </Switch>
+      </Router>
+    </>
   )
 }
 

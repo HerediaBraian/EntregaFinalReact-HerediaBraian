@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
-
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -9,15 +8,15 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyCTXfk1ZGqoR2Anog1shvgB76xiI9Jyg-g",
-    authDomain: "entregafinal-herediabraian.firebaseapp.com",
-    projectId: "entregafinal-herediabraian",
-    storageBucket: "entregafinal-herediabraian.appspot.com",
-    messagingSenderId: "803599783136",
-    appId: "1:803599783136:web:ba5dfe595304b3bdce2c85"
+  apiKey: "AIzaSyCDWHT_dDULflqR0BhI--JeIsTIK1qMPWM",
+  authDomain: "react-proyecto-final-73dc3.firebaseapp.com",
+  projectId: "react-proyecto-final-73dc3",
+  storageBucket: "react-proyecto-final-73dc3.appspot.com",
+  messagingSenderId: "389562777352",
+  appId: "1:389562777352:web:80f8bd9cd85c2ae46836bd"
 };
 
 // Initialize Firebase
-initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
 ReactDOM.createRoot(document.getElementById('root')).render(<App />)

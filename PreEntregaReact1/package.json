@@ -10,10 +10,22 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD
     "firebase": "^10.8.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.1"
+=======
+    "@cloudinary/react": "^1.13.0",
+    "@cloudinary/url-gen": "^1.18.0",
+    "firebase": "^10.8.0",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^5.3.4",
+    "sweetalert2": "^11.10.5",
+    "sweetalert2-react-content": "^5.0.7"
+>>>>>>> 793221a347e6ab3d0b5fefb2bf864f1247918566
   },
   "devDependencies": {
     "@types/react": "^18.2.43",

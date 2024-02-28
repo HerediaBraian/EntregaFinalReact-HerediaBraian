@@ -1,26 +1,34 @@
 import { useEffect, useState } from "react";
-import arrayProductos from "./json/productos.json";
 import ItemDetail from "./ItemDetail";
 import {useParams} from "react-router-dom";
-
+import {getFirestore, collection, getDocs} from "firebase/firestore";
 const ItemDetailConteiner = () => {
     const [item, setItem] = useState([]);
     const {id} = useParams();
+    const [products, setProducts] = useState(null); 
 
-    useEffect (() => {
-        const promesa = new Promise(resolve => {
-            setTimeout(() => {
-                let producto = arrayProductos.find(item => item.id === id);
-                resolve(producto);
-            }, 2000);
+    useEffect(() => {
+        
+        const db = getFirestore();
+        const colRef = collection(db, 'Productos');  
+
+        getDocs(colRef).then((snapshot) => {
+        const data= snapshot.docs.map(doc => ({id: doc.id, ...doc.data()}));    
+        setProducts(data);
     })
-    promesa.then(data => {
-        setItem(data);
-    })
-    }, {id});
+    }, [])
+    
+    if(!products) return <h1>Cargando...</h1>
+    console.log(products);
+    // const addToCart = (product)=>{
+    //     cart.push(product);
+    // }
             
     return(
-        <ItemDetail item={item}/>
+        <>
+        <h2>Detalle del producto</h2>
+        <ItemDetail/>
+        </>
     )
     }
 
