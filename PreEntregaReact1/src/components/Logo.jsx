@@ -1,5 +1,5 @@
 import LogoEmpresa from "../assets/logo entrega.jpeg";
-
+import { Link } from "react-router-dom";
 const Logo = () => {
     return (
     <Link to={"/"}>
